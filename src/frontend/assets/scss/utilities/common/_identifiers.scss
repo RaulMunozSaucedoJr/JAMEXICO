@@ -1,0 +1,57 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../common/display'as display;
+/*Font properties*/
+@use '../font_properties/fonts'as font;
+@use '../font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+#informative_alert_dashboard {
+    background-color: color.$dark_green;
+    border: solid color.$dark_green .2em;
+
+    h1 {
+        @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+    }
+
+    p {
+        @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        line-height: 2em;
+        word-wrap: break;
+    }
+
+    a {
+        background-color: transparent;
+        @include width_height(widths_heights.$w100, widths_heights.$hauto);
+        border: color.$white solid .2em;
+
+        span {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        i {
+            color: color.$white;
+        }
+    }
+}
+
+.valido {
+    border: color.$dark_green solid .2em;
+}
+
+.invalido {
+    border: color.$red solid .2em;
+}
+
+#curp {
+    text-transform: uppercase;
+}

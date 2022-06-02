@@ -1,0 +1,52 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+.nav {
+    border: color.$dark_green solid .2em;
+    @include margin(margin.$margin1);
+
+    &-item {
+        background-color: color.$dark_green;
+        width: 100%;
+
+        a {
+            text-align: center;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            text-decoration: none;
+            text-emphasis: none;
+
+            &:hover {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                outline: none;
+            }
+
+            &:active {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                text-align: center;
+                font-weight: bolder;
+
+                &:hover {
+                    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                }
+            }
+        }
+    }
+
+}
+
+.tab-content {
+    border: color.$dark_green solid .2em;
+    margin: 0em 2em 2em 2em;
+}

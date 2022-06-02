@@ -1,0 +1,18 @@
+//Font properties
+@use '../utilities/font_properties/fonts'as font;
+@use '../utilities/font_properties/font_sizes'as fonts_sizes;
+@use '../utilities/font_properties/_font_properties.scss'as font_properties;
+
+@use '../utilities/common/colors'as color;
+
+@use '../utilities/mixins/mixins'as *;
+
+::placeholder {
+    @include text(font.$Montserrat, fonts_sizes.$general, color.$black);
+    font-weight: bolder;
+}
+
+::selection {
+    color: color.$white;
+    background-color: color.$dark_green;
+}

@@ -1,0 +1,91 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+    background-color: color.$dark_green;
+    position: -webkit-sticky;
+    position: sticky;
+
+    a {
+        @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        font-weight: bolder;
+        background-color: color.$white;
+
+        &:hover {
+            color: color.$black;
+            text-decoration: underline;
+            transition: .2s ease-in-out;
+        }
+
+    }
+
+    i {
+        color: color.$white;
+    }
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    @include text(font.$Montserrat, fonts_sizes.$general, color.$white);
+    font-weight: bold;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}

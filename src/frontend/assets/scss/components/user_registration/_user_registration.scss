@@ -1,0 +1,20 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+.user_registration {
+    @include width_height(widths_heights.$w100, widths_heights.$h100);
+    overflow-x: hidden;
+
+}

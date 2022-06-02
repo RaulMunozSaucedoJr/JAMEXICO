@@ -1,0 +1,52 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+.accordion {
+    border-radius: 0;
+
+    &-item {
+        border-radius: 0;
+    }
+
+    &-haeder {
+        background-color: color.$light_green;
+
+        &:active {
+            &:hover {
+                background-color: color.$light_green;
+
+                a {
+                    @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+                }
+            }
+        }
+    }
+
+    &-button {
+        background-color: color.$light_green;
+        @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+        font-weight: bolder;
+
+        &:active {
+            &:hover {
+                background-color: color.$light_green;
+
+                a {
+                    @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+                }
+            }
+        }
+    }
+}

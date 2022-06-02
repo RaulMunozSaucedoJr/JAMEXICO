@@ -1,0 +1,83 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+.card {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow-x: hidden;
+
+    &-header {
+        height: auto;
+        background-color: color.$dark_green !important;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            font-weight: bolder;
+            text-align: left;
+        }
+
+    }
+
+    &-body {
+
+        h5 {
+            text-align: left;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
+            font-weight: bolder;
+        }
+
+        p {
+            font-weight: bolder;
+            text-align: justify;
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$black);
+        }
+    }
+
+    &-footer {
+        background-color: color.$dark_green;
+
+        a {
+            width: 100%;
+            height: auto;
+            margin-top: 1em;
+            font-weight: bolder;
+            text-align: center;
+            outline: none;
+            border: color.$white solid .2em;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+
+            &:hover {
+                outline: 0 none;
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+
+                &:focus {
+                    outline: 0 none;
+                    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                }
+            }
+        }
+
+
+        p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        i {
+            color: color.$white;
+        }
+    }
+}

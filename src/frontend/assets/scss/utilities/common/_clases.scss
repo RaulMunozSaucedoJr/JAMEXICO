@@ -1,0 +1,427 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../common/display'as display;
+/*Font properties*/
+@use '../font_properties/fonts'as font;
+@use '../font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+.center {
+    display: grid;
+    place-content: center;
+}
+
+.invalid-feedback {
+    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+    @include padding(padding.$padding_half);
+    text-align: center;
+    font-weight: bolder;
+}
+
+.container_404 {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/Lost.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+        @include padding(padding.$padding2);
+        background-color: color.$dark_green;
+        overflow-x: hidden;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        a {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            text-align: center;
+            background-color: transparent;
+            border: color.$white solid .2em;
+
+            &:hover {
+                @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+                border: color.$white solid .2em;
+            }
+
+            i {
+                color: color.$white;
+            }
+        }
+
+
+    }
+}
+
+.job_container {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    background-color: color.$dark_green;
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
+            letter-spacing: .2em;
+            font-weight: bolder;
+        }
+
+        &_1 {
+            @include width_height(widths_heights.$w30, widths_heights.$vh100);
+            background-color: color.$dark_green;
+
+            h1 {
+                @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+            }
+        }
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+        background-image: url(/src/frontend/assets/img/png/job_image.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &_bottom {
+        @include width_height(widths_heights.$w100, widths_heights.$h100);
+
+    }
+}
+
+.job_allie_container {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    background-color: color.$dark_green;
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
+            letter-spacing: .2em;
+            font-weight: bolder;
+        }
+
+        &_1 {
+            @include width_height(widths_heights.$w30, widths_heights.$vh100);
+            background-color: color.$dark_green;
+
+            h1 {
+                @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+            }
+        }
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+        background-image: url(/src/frontend/assets/img/png/job_list_allies.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &_bottom {
+        @include width_height(widths_heights.$w100, widths_heights.$h100);
+
+    }
+}
+
+.faqs {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    overflow-x: hidden;
+
+
+    &_left {
+        background-color: color.$dark_green;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            text-align: center;
+            font-weight: bolder;
+        }
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/Faqs.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+}
+
+.container_register_applicants {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w30, widths_heights.$vh100);
+        background-color: color.$dark_green;
+        overflow-y: hidden;
+
+        input+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        input.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        a {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            border: color.$white .2em solid;
+            outline: none;
+
+            span {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            }
+
+            &:hover {
+                outline: none;
+                border: color.$white .2em solid;
+            }
+        }
+
+        label {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            margin-top: 2em;
+        }
+
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w70, widths_heights.$vh100);
+
+    }
+}
+
+.container_jobs {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-color: color.$dark_green;
+        @include display(display.$display_grid, display.$place_content_center);
+
+        label {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        }
+
+        input+p,
+        textarea+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        input.invalido+p,
+        textarea.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            border: color.$white solid .2em;
+        }
+
+        a {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            border: color.$white .2em solid;
+            outline: none;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            background-color: transparent;
+
+            span {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            }
+
+            &:hover {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                outline: none;
+                border: color.$white .2em solid;
+                background-color: transparent;
+            }
+        }
+
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/register_jobs.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &_bottom {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    }
+}
+
+.container_new_user_register {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/new_user_register.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &_right {
+        @include display(display.$display_grid, display.$place_content_center);
+        background-color: color.$dark_green;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            text-align: center
+        }
+
+        a {
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            text-align: center
+        }
+
+        label {
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            font-weight: bolder;
+            text-align: left;
+        }
+
+
+        .btn-success {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            background-color: transparent;
+            border: solid color.$white .2em;
+
+            span {
+                color: color.$white;
+            }
+        }
+
+        input+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        input.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .btn-warning {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            background-color: transparent;
+            border: solid color.$white .2em;
+            color: color.$white;
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            span {
+                color: color.$white;
+            }
+        }
+    }
+}
+
+.container_profile {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-color: color.$dark_green;
+        @include display(display.$display_grid, display.$place_content_center);
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/personal_info.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: color.$dark_green solid .4em;
+        border-bottom: none;
+        border-top: none;
+    }
+}
+
+.container_alert {
+    @include display(display.$display_grid, display.$place_content_center);
+    @include margin(margin.$margin1);
+}
+
+.navbar-collapse {
+    margin-top: 1em;
+}
+
+.header_jobs {
+    height: 100vh;
+    background-image: url(/src/frontend/assets/img/Header_Jobs.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include display(display.$display_grid, display.$place_content_center);
+
+    .box {
+        background-color: color.$dark_green;
+        border-radius: 2em;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
+            text-align: center
+        }
+    }
+}

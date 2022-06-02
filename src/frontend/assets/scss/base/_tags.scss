@@ -1,0 +1,163 @@
+/* Widths & Heights */
+@use '../base/widths_heights/widths_heights'as widths_heights;
+/*Font properties*/
+@use '../utilities/font_properties/fonts'as font;
+@use '../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../utilities/margins_paddings/paddings'as padding;
+@use '../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../utilities/common/colors'as color;
+/*Mixins*/
+@use '../utilities/mixins/mixins'as *;
+
+html,
+body {
+    background-color: color.$white;
+}
+
+body {
+    @include width_height(widths_heights.$w100, widths_heights.$h100);
+    @include text(font.$Montserrat, fonts_sizes.$general, color.$black);
+    overflow-x: hidden;
+}
+
+section {
+    @include width_height(widths_heights.$w100, widths_heights.$h100);
+}
+
+nav {
+    width: 100vw;
+    height: auto;
+    background-color: color.$dark_green;
+
+    i {
+        color: color.$white;
+    }
+}
+
+header {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    overflow-x: hidden;
+}
+
+footer {
+    @include width_height(widths_heights.$w100, widths_heights.$h20);
+    background-color: color.$dark_green;
+}
+
+form {
+    @include padding(padding.$padding1);
+}
+
+hr {
+    border: solid .1rem color.$black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    transition: .3s ease all;
+    box-sizing: border-box;
+    outline: none !important;
+    border-radius: .3em;
+    letter-spacing: .2rem;
+    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
+    font-weight: bolder;
+
+    &:focus {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+        outline: 0 none;
+    }
+
+    &:hover {
+        &:focus {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+            outline: 0 none;
+        }
+    }
+}
+
+select .dataTable-selector{
+    width: 100%;
+    border-radius: .3em;
+    @include text(font.$Montserrat, fonts_sizes.$small, color.$black);
+}
+
+button,
+button[type="button"],
+button[type="reset"],
+button[type="submit"] {
+    @include width_height(widths_heights.$w100, widths_heights.$hauto);
+    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+    font-weight: bolder;
+    text-align: center;
+    outline: none;
+    border: transparent;
+    border-radius: .3em;
+
+    &:hover {
+        @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        outline: 0 none;
+
+        &:focus {
+            outline: 0 none;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        }
+    }
+}
+
+textarea {
+    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
+    font-weight: bolder;
+
+    &:focus {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+        outline: 0 none;
+    }
+
+    &:hover {
+        &:focus {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+            outline: 0 none;
+        }
+    }
+}
+
+table {
+    @include width_height(widths_heights.$w100, widths_heights.$h100);
+}
+
+h1 {
+    @include text(font.$Montserrat, fonts_sizes.$medium, color.$black);
+    @include padding(padding.$padding1);
+    font-weight: bolder;
+}
+
+label {
+    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+    text-align: left;
+    font-weight: bolder; 
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+    @include text(font.$Montserrat, fonts_sizes.$general, color.$black);
+}
+
+small {
+    @include text(font.$Montserrat, fonts_sizes.$small, color.$white);
+    font-weight: bolder;
+}
+
+i {
+    color: color.$dark_green;
+}

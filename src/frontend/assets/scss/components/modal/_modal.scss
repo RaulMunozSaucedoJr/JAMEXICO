@@ -1,0 +1,75 @@
+/* Widths & Heights */
+@use '../../base/widths_heights/widths_heights'as widths_heights;
+/*Display*/
+@use '../../utilities/common/display'as display;
+/*Font properties*/
+@use '../../utilities/font_properties/fonts'as font;
+@use '../../utilities/font_properties/font_sizes'as fonts_sizes;
+/*Paddings & Margins*/
+@use '../../utilities/margins_paddings/paddings'as padding;
+@use '../../utilities/margins_paddings/margins'as margin;
+/*Colors*/
+@use '../../utilities/common/colors'as color;
+/*Mixins*/
+@use '../../utilities/mixins/mixins'as *;
+
+
+.modal {
+
+
+    &-header {
+        background-color: color.$dark_green;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            text-align: center;
+        }
+    }
+
+    &-body {
+        @include width_height(widths_heights.$w100, widths_heights.$h100);
+        background-color: color.$white;
+
+        label {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+        }
+    }
+
+    &-footer {
+        @include width_height(widths_heights.$w100, widths_heights.$h100);
+        background-color: color.$white;
+        border-top: solid color.$dark_green .2em;
+
+        button[type="submit"] {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            background-color: color.$dark_green;
+            font-weight: bolder;
+            text-align: center;
+            outline: none;
+            border: transparent;
+
+            &:hover {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+
+                &:focus {
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+                    outline: 0 none;
+                    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                }
+            }
+        }
+
+        button[type="button"] {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+            border: color.$dark_green solid;
+            background-color: transparent;
+
+            &:focus {
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
+                outline: 0 none;
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            }
+        }
+    }
+}
