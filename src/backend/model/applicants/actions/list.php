@@ -4,7 +4,7 @@ require "../../../controller/controller.php";
 $consulta = $pdo->prepare("SELECT * FROM applicants ORDER BY id DESC");
 $consulta->execute();
 if ($data != "") {
-    $consulta = $pdo->prepare("SELECT * FROM applicants WHERE id LIKE '%".$data."%' OR last_name LIKE '%".$data."%' OR mobile_number LIKE '%".$data."%'");
+    $consulta = $pdo->prepare("SELECT * FROM applicants WHERE id LIKE '%".$data."%' OR name LIKE '%".$data."%' OR last_name LIKE '%".$data."%'");
     $consulta->execute();
 }
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);

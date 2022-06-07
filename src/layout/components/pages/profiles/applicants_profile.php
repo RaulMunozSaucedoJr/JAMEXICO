@@ -32,19 +32,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <?php echo htmlspecialchars($_SESSION["username"]); ?>
                         </h1>
                     </div>
+                    <?php
+                        $sql = "SELECT * FROM cv";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
                     <div class="card-body">
-                        <p class="card-text">
-                            Aquí va:
-
-                            Nombre del usuario<br>
-                            Apellidos del usuario<br>
-                            Dirección del usuario<br>
-                            Números telefónicos<br>
-                            Correo Electrónico<br>
-                            Curp<br>
-                            Puesto (Admininstrador / Aliados / Voluntarios / Postulantes)
-
-                        </p>
+                        <ul>
+                            <li> <?php echo $row['address']; ?></li>
+                            <li> <?php echo $row['cel_phone']; ?></li>
+                            <li> <?php echo $row['email']; ?></li>
+                            <li> <?php echo $row['website']; ?></li>
+                            <li> <?php echo $row['profesional_studies']; ?></li>
+                            <li> <?php echo $row['skills']; ?></li>
+                            <li> <?php echo $row['laboral_experience']; ?></li>
+                            <li> <?php echo $row['laboral_links']; ?></li>
+                        </ul>
                     </div>
                     <div class="card-footer">
                         <a type="button" class="btn btn-outline-* btn-lg"

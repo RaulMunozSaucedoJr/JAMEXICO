@@ -46,7 +46,6 @@ import {
 
             const validate_Inputs_Regexs = (field, regex) => {
                 regex.test(field.value.trim()) ? field.className = 'valido' : field.className = 'invalido';
-                console.log("Validando mientras el usuario teclea");
             }
 
             empty_inputs.forEach(item => item.addEventListener(

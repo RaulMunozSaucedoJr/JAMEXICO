@@ -23,7 +23,7 @@
         background-color: color.$dark_green !important;
 
         h1 {
-            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
             font-weight: bolder;
             text-align: left;
         }
@@ -42,6 +42,13 @@
             font-weight: bolder;
             text-align: justify;
             @include text(font.$Montserrat, fonts_sizes.$medium, color.$black);
+        }
+
+        li{
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
+            font-weight: bolder;
+            text-align: left;
+            word-wrap: break-word;
         }
     }
 

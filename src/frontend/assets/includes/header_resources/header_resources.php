@@ -15,14 +15,21 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!----------------->
-    <!-- Data-Tables CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <!-- Chart -->
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js"></script>
+    <!-- Simple Data-Tables CSS -->
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/autofill/2.4.0/css/autoFill.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.3/css/searchBuilder.dataTables.min.css">
     <!-------------->
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!---------------->
     <!-- ETIQUETA META PARA CUANDO SE TENGA INACTIVIDAD POR TRES MINUTOS SE CIERRE SESIÓN -->
-    <meta http-equiv="refresh" content="180;url=" />
+    <meta http-equiv="refresh" content="3600;url=/src/backend/controller/logout.php" />
     <!-------------------------------------------------------------------------------------->
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/src/frontend/assets/scss/styles.css">

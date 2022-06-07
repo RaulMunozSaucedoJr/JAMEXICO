@@ -13,7 +13,7 @@
                 El usuario NO aceptará carácteres especiales. Favor de verificar.
             </strong>
         </p>
-        <span class="invalid-feedback"><?php echo $password_err; ?></span>
+        <span class="invalid-feedback"><?php echo $username_err; ?></span>
     </div>
 </div>
 

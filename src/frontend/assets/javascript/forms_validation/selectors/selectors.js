@@ -29,11 +29,26 @@ export let regex_inputs = {
     email: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$/,
 
     //!Properties name from job form
-    job_name: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    title_job: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
     company_name: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
-    job_address: /^[a-zA-ZÀ-ÿ0-9.,#-\u00f1\u00d1\s]{3,28}$/,
+    job_address: /^[a-zA-ZÀ-ÿ0-9#-\u00f1\u00d1\s]{3,28}$/,
     salary: /^[0-9]*$/,
     type_job: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
     schedules: /^[a-zA-ZÀ-ÿ0-9.,#-\u00f1\u00d1\s]{3,28}$/,
     job_description: /^[a-zA-ZÀ-ÿ0-9.,#-\u00f1\u00d1\s]{3,28}$/,
+
+    //!Properties name from blog post
+    title: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    description_post: /^[a-zA-ZÀ-ÿ0-9\u00f1\u00d1\s]{3,28}$/,
+    search: /^[a-zA-ZÀ-ÿ0-9\u00f1\u00d1\s]$/,
+
+    //!Properties name from cv register
+    full_name: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    address: /^[a-zA-ZÀ-ÿ0-9#.-_\u00f1\u00d1\s]{3,28}$/,
+    cel_phone: /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/,
+    website: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+    profesional_studies: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    skills: /^[a-zA-ZÀ-ÿ#.,-_:;\u00f1\u00d1\s]{3,28}$/,
+    laboral_experience: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    laboral_links: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
 };
