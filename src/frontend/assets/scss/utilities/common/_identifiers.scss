@@ -44,14 +44,41 @@
     }
 }
 
+#button_create_post {
+    width: 100%;
+    height: auto;
+    border: color.$dark_green solid .2em;
+    background-color: color.$dark_green;
+
+    span {
+        @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+        text-align: center;
+    }
+
+    i{
+        color: color.$white;
+    }
+
+    &:hover {
+        transition: .2s ease-in-out;
+        background-color: color.$white;
+
+        span {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+            text-align: center;
+        }
+
+        i{
+            color: color.$dark_green;
+        }
+
+    }
+}
+
 .valido {
     border: color.$dark_green solid .2em;
 }
 
 .invalido {
     border: color.$red solid .2em;
-}
-
-#curp {
-    text-transform: uppercase;
 }

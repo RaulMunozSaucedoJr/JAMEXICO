@@ -17,7 +17,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item"
                                 href="/src/layout/components/pages/registrations/register_applicants.php">Registrar Aplicante</a></li>
-                        <li><a class="dropdown-item" href="/src/layout/components/pages/registrations/register_job.php">Registrar Empleo</a></li>
+                        <li><a class="dropdown-item" href="/src/layout/components/pages/registrations/register_jobs.php">Registrar Empleo</a></li>
                         <li><a class="dropdown-item" href="/src/layout/components/organisms/forms/new_user_register/new_register_user.php">Registrar Usuario</a></li>
                     </ul>
                 </li>

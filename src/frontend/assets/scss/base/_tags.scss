@@ -11,12 +11,13 @@
 /*Mixins*/
 @use '../utilities/mixins/mixins'as *;
 
-html,
-body {
-    background-color: color.$white;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4em;
 }
 
 body {
+    background-color: color.$white;
     @include width_height(widths_heights.$w100, widths_heights.$h100);
     @include text(font.$Montserrat, fonts_sizes.$general, color.$black);
     overflow-x: hidden;
@@ -24,6 +25,7 @@ body {
 
 section {
     @include width_height(widths_heights.$w100, widths_heights.$h100);
+    overflow-x: hidden;
 }
 
 nav {
@@ -46,12 +48,9 @@ footer {
     background-color: color.$dark_green;
 }
 
-form {
-    @include padding(padding.$padding1);
-}
 
 hr {
-    border: solid .1rem color.$black;
+    border: solid .5px color.$dark_green;
 }
 
 input[type="text"],
@@ -84,10 +83,12 @@ input[type="password"] {
     }
 }
 
-select .dataTable-selector{
-    width: 100%;
+select {
+    @include width_height(widths_heights.$w100, widths_heights.$hauto);
+    @include text(font.$Montserrat, fonts_sizes.$medium, color.$black);
+    font-weight: bolder;
+    border: transparent;
     border-radius: .3em;
-    @include text(font.$Montserrat, fonts_sizes.$small, color.$black);
 }
 
 button,
@@ -114,16 +115,18 @@ button[type="submit"] {
 }
 
 textarea {
-    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
+    @include text(font.$Montserrat, fonts_sizes.$medium, color.$black);
     font-weight: bolder;
 
     &:focus {
+        @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
         outline: 0 none;
     }
 
     &:hover {
         &:focus {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px transparent;
             outline: 0 none;
         }
@@ -143,7 +146,7 @@ h1 {
 label {
     @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
     text-align: left;
-    font-weight: bolder; 
+    font-weight: bolder;
 }
 
 a,

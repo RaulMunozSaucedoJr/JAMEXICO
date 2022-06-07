@@ -48,10 +48,64 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     ?>
                     <!----------->
 
-
-                    <div class="card">
-
+                    <?php
+                        $sql = "SELECT COUNT(id) AS num FROM users";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Cantidad de usuarios inscritos:</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1>
+                                    <?php echo $row['num'] . '<br>USUARIOS'; ?>
+                                </h1>
+                            </div>
+                        </div>
                     </div>
+
+                    <?php
+                        $sql = "SELECT COUNT(id) AS jobs FROM jobs";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Cantidad de empleos inscritos:</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1>
+                                    <?php echo $row['jobs'] .'<br>EMPLEOS REGISTRADOS'; ?>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php
+                        $sql = "SELECT COUNT(id) AS aplicants FROM applicants";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Cantidad de aplicantes inscritos:</h1>
+                            </div>
+                            <div class="card-body">
+                                <h1>
+                                    <?php echo $row['aplicants'] .'<br>APLICANTES REGISTRADOS'; ?>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -67,6 +121,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     ?>
     <!------------>
 
+
+    <!-- Resources footer -->
+    <?php
+        include_once '../../../frontend/assets/includes/footer_resources/footer_resources.php';
+    ?>
+    <!---------------------->
+
+    <script src="/src/frontend/assets/javascript/index.js"></script>
+
     <script>
     var el = document.getElementById("wrapper");
     var toggleButton = document.getElementById("menu-toggle");
@@ -76,11 +139,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     };
     </script>
 
-    <!-- Resources footer -->
-    <?php
-        include_once '../../../frontend/assets/includes/footer_resources/footer_resources.php';
-    ?>
-    <!---------------------->
 
 
 </body>

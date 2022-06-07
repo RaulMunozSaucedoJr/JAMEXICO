@@ -16,12 +16,11 @@
 
 .modal {
 
-
     &-header {
         background-color: color.$dark_green;
 
         h1 {
-            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
             text-align: center;
         }
     }
@@ -33,6 +32,24 @@
         label {
             @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
         }
+
+        textarea+p,
+        input+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        textarea.invalido+p,
+        input.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
     }
 
     &-footer {

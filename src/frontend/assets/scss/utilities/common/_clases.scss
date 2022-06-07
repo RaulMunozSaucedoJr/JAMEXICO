@@ -25,6 +25,76 @@
     font-weight: bolder;
 }
 
+/*CMS BLOG*/
+.header_container_blog {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        @include display(display.$display_grid, display.$place_content_center);
+        background-color: color.$dark_green;
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
+        }
+
+        a {
+            border: color.$white solid .2rem;
+
+            &:hover {
+                border: color.$white solid .2rem;
+            }
+
+            span {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            }
+        }
+
+        i {
+            color: color.$white;
+        }
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/Blog.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/**********/
+/*CMS BLOG*/
+.container_cms_blog {
+
+    &_left {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+        input+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        input.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w70, widths_heights.$vh100);
+    }
+}
+
+/**********/
+
 .container_404 {
     @include width_height(widths_heights.$w100, widths_heights.$vh100);
 
@@ -72,12 +142,12 @@
 
 .job_container {
     @include width_height(widths_heights.$w100, widths_heights.$vh100);
-    background-color: color.$dark_green;
+    background-color: color.$white;
 
     &_left {
         @include width_height(widths_heights.$w50, widths_heights.$vh100);
         @include display(display.$display_grid, display.$place_content_center);
-
+        background-color: color.$dark_green;
 
         h1 {
             @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
@@ -114,12 +184,12 @@
 
 .job_allie_container {
     @include width_height(widths_heights.$w100, widths_heights.$vh100);
-    background-color: color.$dark_green;
+    background-color: color.$white;
 
     &_left {
         @include width_height(widths_heights.$w50, widths_heights.$vh100);
         @include display(display.$display_grid, display.$place_content_center);
-
+        background-color: color.$dark_green;
 
         h1 {
             @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
@@ -181,14 +251,15 @@
 
 .container_register_applicants {
     @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    overflow-y: visible;
 
     &_left {
-        @include width_height(widths_heights.$w30, widths_heights.$vh100);
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
         background-color: color.$dark_green;
         overflow-y: hidden;
 
         input+p {
-            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            @include text(font.$Montserrat, fonts_sizes.$small, color.$red);
             text-decoration: none;
             text-align: center;
             outline: none !important;
@@ -199,11 +270,11 @@
         input.invalido+p {
             opacity: 1;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 2px;
         }
 
         h1 {
-            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            @include text(font.$Montserrat, fonts_sizes.$medium, color.$white);
             text-align: center;
             font-weight: bolder;
         }
@@ -225,19 +296,20 @@
 
         label {
             @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
-            margin-top: 2em;
+            margin-top: .5em;
         }
 
     }
 
     &_right {
-        @include width_height(widths_heights.$w70, widths_heights.$vh100);
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
 
     }
 }
 
 .container_jobs {
     @include width_height(widths_heights.$w100, widths_heights.$vh100);
+    overflow-y: visible;
 
     &_left {
         @include width_height(widths_heights.$w50, widths_heights.$vh100);
@@ -423,5 +495,101 @@
             @include text(font.$Montserrat, fonts_sizes.$extra_big, color.$white);
             text-align: center
         }
+    }
+}
+
+.container_blog_content {
+    @include width_height(widths_heights.$w100, widths_heights.$vh100);
+
+    &_left {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-color: color.$dark_green;
+
+
+        a {
+            @include width_height(widths_heights.$w100, widths_heights.$hauto);
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+
+            &:hover {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+                border: color.$white solid .2rem;
+            }
+        }
+
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$white);
+            text-align: center
+        }
+    }
+
+    &_right {
+        @include width_height(widths_heights.$w50, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/blog_content.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &_bottom {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
+        background-color: color.$white;
+    }
+}
+
+.container_register_cv {
+    @include width_height(widths_heights.$w100, widths_heights.$h100);
+
+    &_top {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
+        background-image: url(/src/frontend/assets/img/png/curriculum.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &_center {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
+        background-color: color.$white;
+ 
+        h1 {
+            @include text(font.$Montserrat, fonts_sizes.$big, color.$dark_green);
+            text-align: center
+        }
+
+        input+p {
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$red);
+            text-decoration: none;
+            text-align: center;
+            outline: none !important;
+            opacity: 0;
+            height: 0;
+        }
+
+        input.invalido+p {
+            opacity: 1;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            border: color.$dark_green solid .2em;
+
+            &:hover {
+                border: color.$dark_green solid .2em;
+            }
+
+            span {
+                @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+
+                &:hover {
+                    @include text(font.$Montserrat, fonts_sizes.$betwen, color.$dark_green);
+                }
+            }
+        }
+
+    }
+
+    &_bottom {
+        @include width_height(widths_heights.$w100, widths_heights.$vh100);
     }
 }

@@ -1,3 +1,18 @@
+<?php
+    require_once '../../../../backend/controller/controller.php'
+?>
+
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: /src/Index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,30 +47,11 @@
         include_once '../../../../frontend/assets/includes/footer_resources/footer_resources.php';
     ?>
 
-    <script>
-    const dataTable = new simpleDatatables.DataTable("#basic", {
-        searchable: true,
-        footer: false,
-        perPage: true,
-        perPageSelect: [2, 4, 6, 8, 10],
-        paging: true,
-        truncatePager: true,
-        sorteable: true,
-        layout: {
-            top: "{search}{select}",
-        },
-        labels: {
-            placeholder: "Buscar registros...",
-            perPage: "{select} Registros por página",
-            noRows: "No se encontrarón registros...",
-            info: "Mostrando {start} a {end} de {rows} registros",
-        }
-    })
-    </script>
-
     <script src="/src/frontend/assets/javascript/forms_validation/validations.js" type="module"></script>
 
     <script src="/src/backend/apis/applicants/applicants_api.js"></script>
+
+    <script src="/src/frontend/assets/javascript/datatables/datatables.js"></script>
 </body>
 
 </html>
