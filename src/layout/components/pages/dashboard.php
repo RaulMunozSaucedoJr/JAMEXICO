@@ -106,6 +106,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         </div>
                     </div>
 
+                    <!-- Chatbot pop-up -->
+                    <?php
+                        include_once '../organisms/popups/chatbot.php';
+                    ?>
+                    <!-------------------->
 
                 </div>
             </div>
