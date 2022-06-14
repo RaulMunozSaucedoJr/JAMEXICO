@@ -45,9 +45,19 @@
             <i class="fa-brands fa-blogger-b"></i>Manejador de Blog
         </a>
 
+        <a href="/src/layout/components/pages/content_manager_chatbot/content_manager_chatbot.php"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-brands fa-blogger-b"></i>Manejador de Chatbot
+        </a>
+
         <a href="/src/layout/components/pages/registrations/register_cv.php"
             class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fa-brands fa-blogger-b"></i>Creador de C.V.
+        </a>
+
+        <a href="/src/layout/components/pages/chats/users.php"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-brands fa-blogger-b"></i>Chat de ayuda
         </a>
 
         <a href="/src/backend/controller/logout.php"
