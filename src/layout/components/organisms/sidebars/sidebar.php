@@ -55,9 +55,9 @@
             <i class="fa-brands fa-blogger-b"></i>Creador de C.V.
         </a>
 
-        <a href="/src/layout/components/pages/chats/users.php"
+        <a href="/src/layout/components/pages/tickets/tickets.php"
             class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-brands fa-blogger-b"></i>Chat de ayuda
+            <i class="fa-brands fa-blogger-b"></i>Tickets
         </a>
 
         <a href="/src/backend/controller/logout.php"

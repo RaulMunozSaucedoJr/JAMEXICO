@@ -59,5 +59,27 @@
             document.visibilityState == "hidden" ? document.title = "JA-México, un mundo de posibilidades" : document.title =
                 "JA-México";
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+
     })
 }();

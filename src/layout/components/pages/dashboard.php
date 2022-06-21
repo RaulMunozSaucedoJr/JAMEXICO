@@ -48,18 +48,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     ?>
                     <!----------->
 
-                    <?php
-                        $sql = "SELECT COUNT(id) AS num FROM users";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    ?>
+
                     <div class="col-xs-12 col-md-4 col-xl-4">
                         <div class="card">
                             <div class="card-header">
-                                <h1>Cantidad de usuarios inscritos:</h1>
+                                <h1>Usuarios:</h1>
                             </div>
                             <div class="card-body">
+                                <?php
+                                $sql = "SELECT COUNT(id) AS num FROM users";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                            ?>
                                 <h1>
                                     <?php echo $row['num'] . '<br>USUARIOS'; ?>
                                 </h1>
@@ -67,18 +68,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         </div>
                     </div>
 
-                    <?php
-                        $sql = "SELECT COUNT(id) AS jobs FROM jobs";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    ?>
+
                     <div class="col-xs-12 col-md-4 col-xl-4">
                         <div class="card">
                             <div class="card-header">
-                                <h1>Cantidad de empleos inscritos:</h1>
+                                <h1>Empleos:</h1>
                             </div>
                             <div class="card-body">
+                                <?php
+                                $sql = "SELECT COUNT(id) AS jobs FROM jobs";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                            ?>
                                 <h1>
                                     <?php echo $row['jobs'] .'<br>EMPLEOS REGISTRADOS'; ?>
                                 </h1>
@@ -86,19 +88,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         </div>
                     </div>
 
-
-                    <?php
-                        $sql = "SELECT COUNT(id) AS aplicants FROM applicants";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    ?>
                     <div class="col-xs-12 col-md-4 col-xl-4">
                         <div class="card">
                             <div class="card-header">
-                                <h1>Cantidad de aplicantes inscritos:</h1>
+                                <h1>Aplicantes:</h1>
                             </div>
                             <div class="card-body">
+                                <?php
+                                $sql = "SELECT COUNT(id) AS aplicants FROM applicants";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                            ?>
                                 <h1>
                                     <?php echo $row['aplicants'] .'<br>APLICANTES REGISTRADOS'; ?>
                                 </h1>
@@ -106,26 +107,91 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         </div>
                     </div>
 
-                    <!-- Chatbot pop-up -->
-                    <?php
-                        include_once '../organisms/popups/chatbot.php';
-                    ?>
-                    <!-------------------->
+
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Tickets:</h1>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    $sql = "SELECT COUNT(id) AS tickets FROM tickets";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                ?>
+                                <h1>
+                                    <?php echo $row['tickets'] .'<br>TICKETS REGISTRADOS'; ?>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Chatbot</h1>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    $sql = "SELECT COUNT(id) AS preguntas_respuestas FROM chatbot";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                ?>
+                                <h1>
+                                    <?php echo $row['preguntas_respuestas'] .'<br>PREGUNTAS/RESPUESTAS'; ?>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Posts</h1>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    $sql = "SELECT COUNT(id) AS posts FROM blog";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                ?>
+                                <h1>
+                                    <?php echo $row['posts'] .'<br>POST'; ?>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
+
+            <!-- //!Chatbot -->
+            <?php
+                include_once '../organisms/chatbot/chatbot.php';
+            ?>
+            <!------------->
 
         </div>
         <!------------------>
 
     </div>
 
+    <!-- //!Modal chatbot -->
+    <?php
+        include_once '../organisms/modals/modal_chatbot.php';
+    ?>
+    <!------------------->
+
     <!-- Footer -->
     <?php
         include_once '../organisms/footer/footer.php';
     ?>
     <!------------>
-
 
     <!-- Resources footer -->
     <?php
@@ -136,14 +202,31 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <script src="/src/frontend/assets/javascript/index.js"></script>
 
     <script>
-    var el = document.getElementById("wrapper");
-    var toggleButton = document.getElementById("menu-toggle");
+    $(document).ready(function() {
+        $("#send-btn").on("click", function() {
+            $value = $("#data").val();
+            $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value +
+                '</p></div></div>';
+            $(".form").append($msg);
+            $("#data").val('');
 
-    toggleButton.onclick = function() {
-        el.classList.toggle("toggled");
-    };
+            // iniciar el código ajax
+            $.ajax({
+                url: '/src/backend/model/chatbot/actions/message.php',
+                type: 'POST',
+                data: 'text=' + $value,
+                success: function(result) {
+                    $replay =
+                        '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' +
+                        result + '</p></div></div>';
+                    $(".form").append($replay);
+                    // cuando el chat baja, la barra de desplazamiento llega automáticamente al final
+                    $(".form").scrollTop($(".form")[0].scrollHeight);
+                }
+            });
+        });
+    });
     </script>
-
 
 
 </body>

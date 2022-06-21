@@ -50,5 +50,11 @@ export let regex_inputs = {
     profesional_studies: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
     skills: /^[a-zA-ZÀ-ÿ#.,-_:;\u00f1\u00d1\s]{3,28}$/,
     laboral_experience: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
-    laboral_links: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+    laboral_links: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+
+    //!Properties name from new ticket
+    title_ticket: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    section: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    description: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/,
+    buscar: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{3,28}$/
 };

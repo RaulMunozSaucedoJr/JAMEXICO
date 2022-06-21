@@ -13,21 +13,35 @@
 /*Mixins*/
 @use '../../utilities/mixins/mixins'as *;
 
-.dropdown-menu {
+
+.icon-bar {
+    width: 15%;
+    min-width: 15%;
+    height: auto;
     background-color: color.$dark_green;
+    @include display(display.$display_grid, display.$place_content_center);
+    position: fixed;
+    right: 0;
+    bottom: 0;
 
     a {
         @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
-        font-weight: bolder;
-        text-align: left;
+        display: block;
+        transition: all 0.3s ease;
 
         &:hover {
-            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$black);
-            transition: ease-in-out;
+            @include text(font.$Montserrat, fonts_sizes.$betwen, color.$white);
+            border: none;
         }
     }
-}
 
-.dropdown {
-    background-color: color.$dark_green;
+    i {
+        margin-right: .5em;
+        color: color.$white;
+
+        &:hover {
+            color: color.$white;
+        }
+    }
+
 }

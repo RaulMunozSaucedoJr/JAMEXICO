@@ -36,6 +36,7 @@
         integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous">
     </script>
     <!------------>
+   
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/src/frontend/assets/scss/styles.css">
     <!----------------------->

@@ -14,15 +14,15 @@
 
 <body>
 
-    <div class="container-fluid container_blog_content">
+    <div class="container-fluid header_container_blog">
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-xl-6 container_blog_content_left">
+            <div class="col-xs-12 col-md-6 col-xl-6 header_container_blog_left">
                 <h1>JA-BLOG</h1>
-                <a href="../dashboard.php" class="btn btn-outline-* btn-lg">
+                <a type="button" href="../dashboard.php" class="btn btn-outline-* btn-lg">
                     Regresar al dashboard
                 </a>
             </div>
-            <div class="col-xs-12 col-md-6 col-xl-6 container_blog_content_right">
+            <div class="col-xs-12 col-md-6 col-xl-6 header_container_blog_right">
                 <!-- This div contains a background image -->
             </div>
 
@@ -86,14 +86,14 @@
 
     <!-- Fixed bottom create post -->
     <?php
-            include_once '../../atoms/buttons/new_post/new_post.php';
-        ?>
+        include_once '../../atoms/buttons/new_post/new_post.php';
+    ?>
     <!------------------------------>
 
     <!-- Modal create post -->
     <?php
-            include_once '../../organisms/modals/modal_blog.php';
-        ?>
+        include_once '../../organisms/modals/modal_blog.php';
+    ?>
     <!----------------------->
 
     <!-- Modal view post -->
